@@ -4,9 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculater.View"
+        xmlns:behaviors="clr-namespace:Calculater.View.Servises"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox>
+            <i:Interaction.Behaviors>
+                <behaviors:TextBoxRegExBehavior Regex="^[0-9.\-\+\=\*\\]+$"  EmptyValue="0" />
+            </i:Interaction.Behaviors>
+        </TextBox>
     </Grid>
 </Window>
